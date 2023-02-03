@@ -1,0 +1,13 @@
+.formulario{
+    margin: 34vh 40vw;
+    padding: 2%;
+    background-color: white;
+}
+
+.valido{
+    color: rgb(0, 95, 0);
+}
+
+.invalido{
+    color: rgb(127, 0, 0);
+}

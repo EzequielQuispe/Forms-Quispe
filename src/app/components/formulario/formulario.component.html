@@ -1,0 +1,21 @@
+<div class="formulario">
+    <form [formGroup]="formulario" (ngSubmit)="login()" class="was-validated">
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
+            <input formControlName="email" type="email" class="form-control" id="exampleInputEmail1">
+            <div class="invalido" *ngIf="formulario.controls['email'].dirty && formulario.controls['email'].errors?.['required']">El correo electronico no puede estar vacío</div>
+            <div class="invalido" *ngIf="formulario.controls['email'].dirty && formulario.controls['email'].errors?.['pattern']">El correo electronico tiene un formato incorrecto</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+            <input formControlName="password" type="password" class="form-control" id="exampleInputPassword1">
+            <div class="invalido" *ngIf="formulario.controls['password'].dirty && formulario.controls['password'].errors?.['required']">La contraseña no puede estar vacia</div>
+            <div class="invalido" *ngIf="formulario.controls['password'].dirty && formulario.controls['password'].errors?.['minlength']">La contraseña debe tener al menos 8 caracteres</div>
+        </div>
+        <div class="mb-3 form-check">
+            <input formControlName="recordarCredenciales" type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Recordar credenciales</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
